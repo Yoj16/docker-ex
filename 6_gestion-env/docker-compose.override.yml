@@ -1,0 +1,4 @@
+services:
+  app:
+    environment:
+      - EXTRA_CONFIG=override
