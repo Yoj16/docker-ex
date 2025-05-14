@@ -1,0 +1,24 @@
+services:
+  app:
+    image: node:16
+    working_dir: /app
+    volumes:
+      - .:/data
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - MY_SECRET_KEY=aaaaaa
+
+    secrets:
+      - app_secret
+
+    command: sh -c "npm install && npm start"
+
+secrets:
+  app_secret:
+    file: ./secrets/app_secret.txt
+
+volumes:
+  app-data:
+    driver: local
