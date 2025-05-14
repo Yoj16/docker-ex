@@ -1,0 +1,5 @@
+services:
+  app:
+    environment:
+      - EXTRA_CONFIG=override
+    command: sh -c "npm install && npm start && tail -f /dev/null"
